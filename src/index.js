@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 
 import Charts from "./components/Charts";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 
 import "./styles.scss";
 
@@ -11,9 +11,8 @@ const App = () => {
   const [coinData, setCoinData] = useState([]);
   const [darkMode, setDarkMode] = useState(true);
   const [className, setClassName] = useState("App");
-  // console.log("I am useDarkMode from navBar" ,useDarkMode())
 
-  const colorMode = (e) => {
+  const setMode = () => {
     if (darkMode === false) {
       return setClassName("App");
     }
@@ -26,7 +25,12 @@ const App = () => {
   const toggleMode = (e) => {
     e.preventDefault();
     setDarkMode(!darkMode);
-    colorMode();
+    setMode();
+    postLocalStorage();
+  };
+
+  const postLocalStorage = () => {
+    localStorage.setItem("darkMode", darkMode);
   };
 
   useEffect(() => {
@@ -40,7 +44,7 @@ const App = () => {
 
   return (
     <div className={className}>
-      {/* <Navbar /> */}
+      {/* <Navbar setMode={setMode} /> */}
       <nav className="navbar">
         <h1>Crypto Tracker</h1>
         <div className="dark-mode__toggle">
