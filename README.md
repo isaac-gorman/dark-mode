@@ -16,15 +16,15 @@ In this project you'll take this crypto currency tracker app and build two custo
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] CD into the project base directory `cd dark-mode`
-- [ ] Download project dependencies by running `npm install`
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your team lead as collaborator on Github.
+- [x] Clone your OWN version of the repository in your terminal
+- [x] CD into the project base directory `cd dark-mode`
+- [x] Download project dependencies by running `npm install`
+- [x] Start up the app using `npm start`
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
@@ -50,7 +50,7 @@ This is going to be a pretty cool hook. It will be used pretty much the same way
 - We're going to set up some state here. Set up a state property called storedValue.
   - This state property is going to take a function as it's initial value. When we do this, whatever that callback function returns is what gets set as the intialValue for the state property.
   - In the callback function, we'll check to see if the item we passed in already exists in localStorage, and return that value, otherwise we'll return whatever initialValue was passed in.
-  - Quick note, if you pass in arrays or objects to localStorage, you will need to parse it into JSON. Then when you retrieve it, like we do below, you'll need to parse it back into regular JavaScript
+  - Quick note, if you pass in arrays or objects to localStorage, you will need to stringify it into JSON. Then when you retrieve it, like we do below, you'll need to parse it back into regular JavaScript
 
 ```js
 // To retrieve an item from localStorage, call localStorage.getItem('itemName')

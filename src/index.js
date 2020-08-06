@@ -9,6 +9,9 @@ import "./styles.scss";
 
 const App = () => {
   const [coinData, setCoinData] = useState([]);
+
+  
+
   const [darkMode, setDarkMode] = useState(true);
   const [className, setClassName] = useState("App");
 

@@ -1,20 +1,27 @@
-import React, {useState} from 'react'
-import{ useLocalStorage } from "./useLocalStorage"
-// useLocalStorage
-// useDarkMode
-
+import React, { useState, useEffect } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
 export const useDarkMode = () => {
-const [someValue, setSomeValue] = useLocalStorage(false)
+  const [storedValue, setValue] = useLocalStorage("darkMode", false);
 
-// return
-  // is darkMode enabled? 
-  // - yes?
-  // - no?
-  // We also need to return a setter function that is capable of toggling between light and darkmode  
+  useEffect(() => {
+    if (storedValue === true) {
+      document.body.classList.add("dark-mode");
+    }
+    if (storedValue === false) {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [storedValue]);
 
-// I also  need to forward the value and the setter aka storedValue and setValue in an Array
+  return [storedValue, setValue];
+};
 
-}
+// const setMode = () => {
+//   if (darkMode === false) {
+//     return setClassName("App");
+//   }
 
-// export default useDarkMode;
+//   if (darkMode === true) {
+//     return setClassName("dark-mode App");
+//   }
+// };
